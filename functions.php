@@ -20,9 +20,15 @@ function montheme_document_title_parts($title) {
   return $title;
 }
 
+function register_my_menu() {
+register_nav_menu('header-menu',__( 'Header Menu' ));
+}
+add_action( 'init', 'register_my_menu' );
+
 
 add_action('after_setup_theme', 'montheme_supports');
 add_action('wp_enqueue_scripts', 'montheme_register_assets');
 add_filter('document_title_parts', 'montheme_document_title_parts');
+add_theme_support('post-thumbnails');
 
 ?>
