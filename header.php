@@ -11,7 +11,10 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="">
             <a href="<?php echo home_url( '/' ); ?>">
-             <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" class="logo navbar-brand">
+              <?php
+              if ( function_exists( 'the_custom_logo' ) ) {
+                the_custom_logo();
+              } ?>
            </a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

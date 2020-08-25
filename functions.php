@@ -35,7 +35,8 @@ $header_info = array(
 );
 
 
-add_theme_support( 'custom-header', $header_info  );
+add_theme_support( 'custom-header', $header_info );
+add_theme_support( 'custom-logo' );
 
 add_action('after_setup_theme', 'montheme_supports');
 add_action( 'wp_enqueue_scripts', 'montheme_enqueue_style' );

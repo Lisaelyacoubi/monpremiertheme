@@ -2,10 +2,9 @@
 
 
 <!-- BANNER -->
-<section class="container bg-zombie">
-  <img src="<?php echo header_image() ?>" alt="">
-
-<?php get_header_image() ?>
+<section class="container">
+  <img src="<?php echo header_image() ?>" alt="" class="img-fluid">
+  <?php get_header_image() ?>
   <h2 class="text-uppercase font-title-header color-red-theme text-center pt-5">Bienvenue à Zombieville !</h2>
 </section>
 <section class="container size-banner-description bg-zombiecity">
@@ -15,13 +14,13 @@
 
 <!-- VISIT ZOMBIECITY-->
 <section class="container bg-zombiecity pb-5 mt-2">
-  <h2 class="color-red-theme pt-3">Visiter Zombieville</h2>
+  <h2 class="color-red-theme pt-3">Articles récents</h2>
   <?php query_posts('order=desc&showposts=2'); ?>
     <?php while (have_posts()) : the_post(); ?>
     <div class="container bg-zombiecity pt-3 mb-2">
       <p class="text-white text-uppercase"><span class="bg-danger rounded pt-2 pb-2 pl-3 pr-3"><?php the_title(); ?></span></p>
-      <div class="container border-radius-div-theme bg-white ml-5 pb-3">
-        <div class="row">
+      <div class="container border-radius-div-theme ml-5 pb-3">
+        <div class="row bg-white">
           <div class="col-lg-6">
             <ul>
              <li><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("medium"); ?></a></li>
