@@ -79,3 +79,16 @@ button {
 }
 
 .pagination a:hover:not(.active) {background-color: #ddd;}
+
+
+
+/* FOOTER */
+
+.bg-footer{
+  background-color: #CC3C3C;
+  }
+
+.img-size-footer{
+  height: 80%;
+  width: 80%;
+}

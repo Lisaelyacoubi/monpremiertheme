@@ -34,6 +34,16 @@ $header_info = array(
     'default-image' => get_template_directory_uri() . '/img/cover-zombie.jpeg',
 );
 
+if ( function_exists('register_sidebar') )
+  register_sidebar(array(
+    'name' => 'footer',
+    'before_widget' => '<div class = "widgetizedArea">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>',
+  )
+);
+
 
 add_theme_support( 'custom-header', $header_info );
 add_theme_support( 'custom-logo' );
