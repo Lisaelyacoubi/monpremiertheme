@@ -34,17 +34,47 @@ $header_info = array(
     'default-image' => get_template_directory_uri() . '/img/cover-zombie.jpeg',
 );
 
-if ( function_exists('register_sidebar') )
-  register_sidebar(array(
-    'name' => 'footer',
-    'before_widget' => '<div>',
-    'after_widget' => '</div>',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
-  )
-);
 
+function my_register_sidebars() {
+    /* Register the 'primary' sidebar. */
+    register_sidebar(
+        array(
+            'id'            => 'footer-1',
+            'name'          => __( 'Footer 1' ),
+            'description'   => __( 'Widget for footer 1' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        )
+    );
+    register_sidebar(
+        array(
+            'id'            => 'footer-2',
+            'name'          => __( 'Footer 2' ),
+            'description'   => __( 'Widget for footer 2' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        )
+    );
+    /* Repeat register_sidebar() code for additional sidebars. */
+    register_sidebar(
+        array(
+            'id'            => 'footer-3',
+            'name'          => __( 'Footer 3' ),
+            'description'   => __( 'Widget for footer 3' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        )
+    );
+    /* Repeat register_sidebar() code for additional sidebars. */
+}
 
+add_action( 'widgets_init', 'my_register_sidebars' );
 add_theme_support( 'custom-header', $header_info );
 add_theme_support( 'custom-logo' );
 
