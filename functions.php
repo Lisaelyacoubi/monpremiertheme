@@ -37,7 +37,7 @@ $header_info = array(
 if ( function_exists('register_sidebar') )
   register_sidebar(array(
     'name' => 'footer',
-    'before_widget' => '<div class = "widgetizedArea">',
+    'before_widget' => '<div>',
     'after_widget' => '</div>',
     'before_title' => '<h3>',
     'after_title' => '</h3>',
