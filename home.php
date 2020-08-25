@@ -20,9 +20,9 @@ if (have_posts()) :
     <div class="container bg-white border-radius-div-theme pt-5 pb-5">
       <a href="#" class="mt-3 mb-3 d-flex justify-content-center"><?php the_category(); ?></a>
       <article class="">
-        <div class="row ">
+        <div class="row">
           <div class="col-lg-4 d-flex justify-content-center">
-            <img src="<?php the_post_thumbnail('medium'); ?>" alt="">
+            <?php the_post_thumbnail('medium'); ?>
           </div>
           <div class="col-lg-8 bg-light pt-4">
             <p class="pl-3 font-size-line-visite-zombiecity">
@@ -30,7 +30,7 @@ if (have_posts()) :
             </p>
           </div>
           <div class="text-center">
-            <span>  <?php echo get_avatar( get_the_author_meta( 'ID' ), 40 ); ?></span>
+            <span>  <?php echo get_avatar( get_the_author_meta('ID'), 40 ); ?></span>
             <p class="pt-5">Ecrit par <a href=" "><?php the_author(); ?></a>, le <?php the_time( get_option( 'date_format' ) ); ?></p>
           </div>
         </div>
@@ -51,6 +51,8 @@ else :
 <?php
 endif;
 ?>
+
+<?php the_posts_pagination(); ?>
 
 <!-- PAGINATION-->
 <section class="container bg-zombiecity pb-5 mt-2">

@@ -24,4 +24,6 @@
 
 <?php endwhile; endif; ?>
 
+<?php posts_nav_link(); ?>
+
 <?php get_footer(); ?>
