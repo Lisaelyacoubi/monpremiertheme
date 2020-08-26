@@ -3,9 +3,10 @@
 
 <!-- BANNER -->
 <section class="container">
-  <img src="<?php echo header_image() ?>" alt="" class="img-fluid">
-  <?php get_header_image() ?>
-  <h2 class="text-uppercase font-title-header color-red-theme text-center pt-5">Bienvenue à Zombieville !</h2>
+  <div class="container">
+    <img src="<?php echo header_image() ?>" alt="" class="img-fluid">
+    <?php get_header_image() ?>
+  </div>
 </section>
 
 

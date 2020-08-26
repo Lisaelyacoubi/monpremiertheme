@@ -15,13 +15,13 @@
     </div>
     <div class="row">
       <div class="col-lg-4 pt-5">
-        <img src="images/footer/zombie-cartoon.jpg" alt="zombie cartoon" class="img-size-footer">
+        <?php dynamic_sidebar('footer-4') ?>
       </div>
       <div class="col-lg-4 pt-5">
         <p>Tous Droits Réservés, &copy; <?php echo date('Y') ?> - <a href="<?php echo home_url( '/' ); ?>"><?php bloginfo('name')  ?></a></p>
       </div>
       <div class="col-lg-4 pt-5">
-        <p>Mentions légales</p>
+        <p><?php dynamic_sidebar('footer-5') ?></p>
       </div>
     </div>
 
