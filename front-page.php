@@ -7,9 +7,6 @@
   <?php get_header_image() ?>
   <h2 class="text-uppercase font-title-header color-red-theme text-center pt-5">Bienvenue à Zombieville !</h2>
 </section>
-<section class="container size-banner-description bg-zombiecity">
-  <h3 class="color-red-theme text-center ml-5 mr-5 pt-5">Venez découvrir la première ville de zombies en France. De véritables zombies dans leur milieu naturel : des festivals, des évènements inoubliables.... </h3>
-</section>
 
 
 <!-- VISIT ZOMBIECITY-->
