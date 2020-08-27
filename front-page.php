@@ -75,8 +75,8 @@
 
   <h2 class="color-red-theme pt-3 pb-5">Articles récents</h2>
   <?php
-  if (have_posts()) :
-    while ( have_posts() ) : the_post();
+  $latest_blog_posts = new WP_Query( array( 'posts_per_page' => 3 ) );
+  if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts() ) : $latest_blog_posts->the_post();
   ?>
     <div class="container bg-zombiecity pb-5 mt-2">
       <h3 class="text-center text-white"><span class="title-articles pl-5 pr-5 pt-4 pb-4"><?php the_title() ?></span></h3><br>
