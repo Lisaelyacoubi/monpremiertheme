@@ -179,7 +179,7 @@ function wpm_add_taxonomies() {
 	register_taxonomy( 'annees', 'evenements', $args_annee );
 
 
-	$labels_realisateurs = array(
+	$labels_organisateurs = array(
 		'name'                       => _x( 'Organisateurs', 'taxonomy general name'),
 		'singular_name'              => _x( 'Organisateur', 'taxonomy singular name'),
 		'search_items'               => __( 'Rechercher une organisation'),
@@ -194,9 +194,9 @@ function wpm_add_taxonomies() {
 		'menu_name'                  => __( 'Organisateurs'),
 	);
 
-	$args_realisateurs = array(
+	$args_organisateurs = array(
 		'hierarchical'          => false,
-		'labels'                => $labels_realisateurs,
+		'labels'                => $labels_organisateurs,
 		'show_ui'               => true,
 		'show_in_rest'			=> true,
 		'show_admin_column'     => true,
@@ -205,8 +205,48 @@ function wpm_add_taxonomies() {
 		'rewrite'               => array( 'slug' => 'organisateurs' ),
 	);
 
-	register_taxonomy( 'organisateurs', 'evenements', $args_realisateurs );
+	register_taxonomy( 'organisateurs', 'evenements', $args_organisateurs );
 }
+
+// Visiter
+
+function wpm_custom_post_type_visits() {
+
+	$labels = array(
+		'name'                => _x( 'Visiter Zombieville', 'Post Type General Name'),
+		'singular_name'       => _x( 'Visiter Zombieville', 'Post Type Singular Name'),
+		'menu_name'           => __( 'Visiter Zombieville'),
+		'all_items'           => __( 'Tous les lieux à Zombieville'),
+		'view_item'           => __( 'Voir les lieux à Zombieville'),
+		'add_new_item'        => __( 'Ajouter un nouveau lieu à Zombieville'),
+		'add_new'             => __( 'Ajouter'),
+		'edit_item'           => __( 'Editer le lieu'),
+		'update_item'         => __( 'Modifier le lieu'),
+		'search_items'        => __( 'Rechercher un lieu'),
+		'not_found'           => __( 'Non trouvée'),
+		'not_found_in_trash'  => __( 'Non trouvée dans la corbeille'),
+	);
+
+
+	$args = array(
+		'label'               => __( 'Visiter Zombieville'),
+		'description'         => __( 'Tous sur les lieux à Zombieville'),
+		'labels'              => $labels,
+    'menu_icon'      => 'dashicons-admin-site-alt',
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+		'show_in_rest' => true,
+		'hierarchical'        => false,
+		'public'              => true,
+		'has_archive'         => true,
+		'rewrite'			  => array( 'slug' => 'visits'),
+
+	);
+
+	register_post_type( 'visits', $args );
+
+}
+
+add_action( 'init', 'wpm_custom_post_type_visits', 0 );
 
 
 
