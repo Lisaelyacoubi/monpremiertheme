@@ -2,11 +2,39 @@
 
 
 <!-- BANNER -->
-<section class="container">
+<section class="container mt-5 pb-5">
   <div class="container">
     <img src="<?php echo header_image() ?>" alt="" class="img-fluid">
     <?php get_header_image() ?>
   </div>
+</section>
+
+
+<section class="container mt-5 pb-5 bg-zombiecity">
+  <h2 class="color-red-theme pt-3">Evènements à venir</h2>
+  <?php
+  query_posts(array(
+  'post_type' => 'evenements',
+  'showposts' => 5
+  ) );
+  ?>
+  <?php while (have_posts()) : the_post(); ?>
+    <div class="container border-radius-div-theme bg-white pb-3">
+      <div class="container pt-3">
+        <div class="row">
+          <div class="col border-radius-div-theme bg-zombiecity pt-2 pb-2">
+            <p class="text-uppercase text-center"><?php the_terms( $post->ID, 'annees', 'Date de l\' évènement : ' );?></p><hr>
+            <p class="text-uppercase text-center"><a href="<?php the_permalink() ?>"><?php the_title(); ?></p>
+              <div class="">
+                <?php the_post_thumbnail('medium'); ?>
+              </div>
+              <p class="text-center"><?php echo substr(strip_tags($post->post_content), 0, 50); ?>... </p>
+              <p class="text-center">   <?php the_terms( $post->ID, 'organisateurs', 'Evènement proposé par : ' ); ?></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <?php endwhile;?>
 </section>
 
 
